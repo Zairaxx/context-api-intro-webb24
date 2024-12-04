@@ -1,13 +1,20 @@
 import { createContext, useState } from "react";
 
+// Döper vårt nya Context
 export const CounterContext = createContext();
 
-//CounterContext.Provider
+// Returnera en CounterContext.Provider
 
 export function CounterContextProvider ({children}){
+
     const [count,setCount] = useState(10);
+
+    const increment = () => {
+        setCount(count+1);
+    }
     
-    return(<CounterContext.Provider value={count}>
+    return(<div className="Hej"><CounterContext.Provider value={{count,increment}}>
             {children}
-    </CounterContext.Provider>);
+    </CounterContext.Provider>
+    </div>);
 }

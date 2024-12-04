@@ -7,16 +7,11 @@ import HomePage from './page/HomePage'
 
 
 function App() {
-  const [count, setCount] = useState(10)
-
-  const increment = () => {
-    setCount(count+1)
-  }
   
   return (
     <>
     <Routes>
-      <Route path='/' element={<HomePage increment={increment}count={count}/>}></Route>
+      <Route path='/' element={<HomePage/>}></Route>
     </Routes>
     
     </>
